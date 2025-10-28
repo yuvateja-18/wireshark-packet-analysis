@@ -1,0 +1,66 @@
+🕵‍♂ Wireshark Packet Capture & Protocol Analysis Report
+
+📌 Objective
+To capture live network traffic using Wireshark and analyze key protocols such as DNS, TCP, and HTTP. This exercise demonstrates practical skills in packet inspection, filtering, and understanding how data flows across the internet.
+
+---
+
+🛠 Tools Used
+- Wireshark v4.x
+- Operating System: Windows 11
+- Traffic Generator: Browser (Chrome) and ping command
+
+---
+
+📡 Capture Method
+1. Started capture on active Wi-Fi interface.
+2. Visited www.youtube.com and ran ping google.com to generate traffic.
+3. Stopped capture after ~1 minute.
+4. Applied display filters: dns, tcp, http.
+
+---
+
+📦 Protocols Identified
+
+| Protocol |         Description          |                 Purpose                    |
+|----------|------------------------------|--------------------------------------------|
+| DNS      | Resolves domain names to IPs | Converts www.youtube.com to an IP address  |
+| TCP      | Reliable transport protocol  | Establishes secure connection for HTTPS    |
+| HTTP     | Web browsing protocol        | Sends GET request to retrieve web content  |
+
+---
+
+🔍 Sample Packet Details
+
+1. DNS Query
+- Source IP: 10.76.159.154  
+- Destination IP: 10.76.159.88  
+- Query Type: A record  
+- Domain Queried: www.youtube.com  
+- Packet Number: DNS 87
+
+2. TCP Handshake
+- Sequence: SYN → SYN-ACK → ACK  
+- Source Port: 53  
+- Destination Port: 1836  
+- Protocol: TCP over Port 443 (HTTPS)  
+- Flags: [SYN, ACK]
+
+3. HTTP Request
+- Method: GET  
+- Host: www.youtube.com  
+- Purpose: Requesting web content from the server
+
+---
+
+🎯 Learning Outcome
+- Understood how DNS resolves domain names.
+- Observed TCP handshake for secure communication.
+- Identified HTTP GET request structure.
+- Practiced filtering and inspecting packets in Wireshark.
+----
+📁 Files Included
+- capture.pcap: Raw packet capture
+- README.md: Summary of findings
+- report.pdf: This formatted report 
+
